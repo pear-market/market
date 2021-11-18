@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Meta from 'vue-meta'
 import App from './App'
 import Home from './Home'
+import Warm from './stores/warm-wallet'
 
 export function createApp(cookie) {
   Vue.use(VueRouter)
@@ -17,7 +18,9 @@ export function createApp(cookie) {
 
     },
     actions: {},
-    modules: {},
+    modules: {
+      warm: Warm,
+    },
   })
   const router = new VueRouter({
     mode: 'history',

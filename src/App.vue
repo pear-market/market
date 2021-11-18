@@ -11,7 +11,14 @@ import Component from 'vue-class-component'
 @Component({
   name: 'App',
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  async mounted() {
+    await this.$store.dispatch('loadDB')
+    const wallet = await this.$store.dispatch('loadWallet')
+    console.log(wallet.address)
+    await this.$store.dispatch('loadSuggesters')
+  }
+}
 </script>
 
 <style>

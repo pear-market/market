@@ -1,6 +1,9 @@
 <template>
   <div>
     Home page
+    <div v-for="answer of $store.state.warm.answers">
+      {{ JSON.stringify(answer) }}
+    </div>
   </div>
 </template>
 
